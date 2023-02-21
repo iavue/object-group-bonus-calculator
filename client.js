@@ -43,15 +43,39 @@ console.log('array of employee data: ',  employees );
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
+// function loopThroughArray( array ) {
+//   for (let i=0; i < array.length; i++) {
+//     console.log(array[i]);
+//   } 
+// }
 
+function loopThroughArray( array ) {
+  for (let item of array) {
+    // for each item in the array
+    console.log( item ); // console log the item which are the objects in the array
+  }
+}
 
+loopThroughArray(employees)
 
 // This function will calculate 1 employee's bonus!
-//
-function calculateIndividualEmployeeBonus( employee ) {  
+// 
+function calculateIndividualEmployeeBonus( employee ) {  // this employee parameter is an object that is passed in to
   // your logic here
+  let newObj = {};
+  let name = employee.name; // the name property of the employee object
+  newObj.name = name; // we're adding a name property to the newObj object and assigning it to the value of employee object's name property's value
   
+  let bonus = 0;
+  if ( employee.reviewRating <= 2 ) {
+    let bonus = 0;
+  }
   
   // return new object with bonus results
-
+  return newObj;
 }
+
+// test to make sure the name is added 
+console.log(calculateIndividualEmployeeBonus(employees[0]));
+
+// console.log(employees[0].name)
